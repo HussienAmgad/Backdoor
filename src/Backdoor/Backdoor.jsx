@@ -7,7 +7,7 @@ export default function Backdoor() {
   useEffect(() => {
     async function fetchBackdoorValue() {
       try {
-        let { data } = await axios.get("https://hussien.up.railway.app/");
+        let { data } = await axios.get("https://hussien-server.vercel.app/");
         console.log('Fetched Data:', data);
         setBackdoorValue(data.Backdoor); // تأكد من وجود الحقل "Backdoor"
       } catch (error) {
@@ -20,7 +20,7 @@ export default function Backdoor() {
 
   const toggleValue = async () => {
     try {
-      const response = await axios.put("https://hussien.up.railway.app/edit");
+      const response = await axios.put("https://hussien-server.vercel.app/edit");
       console.log('Updated Data:', response.data);
       setBackdoorValue(response.data.Backdoor); // تحديث القيمة من الاستجابة
     } catch (error) {
